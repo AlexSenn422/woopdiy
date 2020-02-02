@@ -1,0 +1,103 @@
+{% for block in section.blocks %}
+{% if collection.handle == block.settings.collection_handle %}
+{% assign featured_collection = block.settings.collection_featured_handle %}
+{% assign popular_collection = block.settings.collection_popular_handle %}
+{% assign button_title = block.settings.button_title %}
+{% assign button_link = block.settings.button_link %}
+{% endif %}  
+{% endfor %}
+
+{%- if section.settings.hide-header != true -%}
+<section class="page-section banner collection-head">
+  <div class="floating-image floating-image-1"><img src="{{ "lemongrass.png" | asset_url }}"></div>
+  <div class="centered asided">
+    <aside>
+      <h1 class="section-title">
+        <span role="text">
+          <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+          {{ collection.title | replace: "|", "<br>" }}
+        </span>
+       </h1>
+       <div class="collection-desc">
+          {{ collection.description }}
+       </div>
+      {% if button_title != blank %}
+      <p><a class="btn" href="{{button_link}}">{{button_title}}</a></p>
+      {% endif %}
+    </aside>
+    <aside>
+      <img src="{{ collection.image | img_url: '1200x800' }}">
+    </aside>
+  </div>
+</section>
+{%- endif -%}
+ 
+<section class="page-section featured-products-main white">
+  {%- if section.settings.hide-header == true -%}
+  <h2 class="section-title reveal-collection">{{ collection.title | replace: "|", "<br>" }}</h2>
+  {%- endif -%}
+  <div class="centered product-grid product-main-grid"> 
+    {% for product in collection.products %}
+{%- include 'bold-product-json', product: product -%}
+    {% if product.tags contains 'explode' %}
+    {% for variant in product.variants %}
+      <div class="product">
+        {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+        <a href="{{ product.url }}?variant={{variant.id}}" class="product-image" style="background-image: url('{{ variant.image.src | img_url: '600x600' }}')"></a>
+        <h3><a href="{{ product.url }}">{{ product.title }} - {{ variant.title }}</a></h3>
+        <div class="price"><span class="money" data-product-id="{{ product.id }}">{{ product.price | money }}</span></div>
+        <div class="quantity">
+          <input type="hidden" class="variation-id" value="{{ variant.id }}" name="variation">
+          <input type="hidden" class="quantity-input" value="1" name="quantity">
+          <a href="#!" class="less">-</a>
+          <span class="num">1</span>
+          <a href="#!" class="more">+</a>
+        </div>
+        <div class="add-to-cart-container">
+          {% if product.available %}
+          <a href="#!" class="add-to-cart">Add to cart</a>
+          {% else %}
+          <span class="add-to-cart-dis">Sold out</span>
+          {% endif %}
+        </div>
+    </div>
+    {% endfor %} 
+    {% else %} 
+    <div class="product">
+      {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+      <a href="{{ product.url }}" class="product-image" style="background-image: url('{{ featured_image | img_url: '600x600' }}')"></a>
+      <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+      <div class="price"><span class="money" data-product-id="{{ product.id }}">{{ product.price | money }}</span></div>
+      <div class="quantity">
+        <input type="hidden" class="variation-id" value="{{ product.selected_or_first_available_variant.id }}" name="variation">
+        <input type="hidden" class="quantity-input" value="1" name="quantity">
+        <a href="#!" class="less">-</a>
+        <span class="num">1</span>
+        <a href="#!" class="more">+</a>
+      </div>
+      <div class="add-to-cart-container">
+        {% if product.available %}
+        <a href="#!" class="add-to-cart">Add to cart</a>
+        {% else %}
+        <span class="add-to-cart-dis">Sold out</span>
+        {% endif %}
+      </div>
+    </div> 
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Collection", 
+	"settings": [
+	  {
+		"type": "checkbox",
+		"label": "Hide the page header",
+		"id": "hide-header",
+		"default": false
+	  }
+	]
+  }
+{% endschema %}

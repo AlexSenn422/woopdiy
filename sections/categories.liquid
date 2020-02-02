@@ -1,0 +1,47 @@
+<section class="page-section categories-section reveal">
+  <div class="floating-image floating-image-2"><img src="{{ "cocoa.png" | asset_url }}"></div>
+  <div class="floating-image floating-image-3"><img src="{{ "cream.jpg" | asset_url }}"></div>
+  <div class="centered">
+    <h2 class="section-title">Categories</h2>
+    <div class="categories-grid">
+      {% for block in section.blocks %}
+      	{% assign collection = collections[block.settings.collection] %}
+      <div class="category">
+        <a href="{{ collection.url }}" class="category-image" style="background-image: url('{{ collection.image | img_url: '600x600' }}');"></a>
+        <h3><a href="{{ collection.url }}">{{ collection.title }}</a></h3>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Categories",
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "featured_collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Categories"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

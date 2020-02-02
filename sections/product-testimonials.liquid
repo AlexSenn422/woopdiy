@@ -1,0 +1,81 @@
+{% if section.blocks.size > 0 %}
+{% assign t = 0 %}
+{%- for block in section.blocks -%}
+  {% if block.settings.product == product.handle %}
+	{% assign t = 1 %}
+	{% break %}
+  {% endif %}
+{%- endfor -%}
+
+{%- if t == 1 -%}
+<section class="page-section testimonial-section transparent">
+  <div class="centered">
+    <h2 class="section-title"><i>What others are</i> saying</h2>
+    <div class="testimonials">
+      {% for block in section.blocks %}
+      {%- if block.settings.product != product.handle -%}
+      {% continue %}
+      {%- endif -%}
+      <div class="testimonial">
+        <div class="testimonial-top">
+          {% if block.settings.photo != blank %}<div class="testimonial-photo">{{ block.settings.photo | img_url : '170x170' | img_tag}}</div>{% endif %}
+          <div>
+            <h3>{{ block.settings.name }}</h3>
+            {% if block.settings.description != blank %}<h5>{{ block.settings.description }}</h5>{% endif %}
+          </div>
+        </div>
+        <div class="testimonial-text">{{ block.settings.testimonial }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product reviews",
+    "settings": [],
+    "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+		{
+		  "type": "product",
+		  "id": "product",
+		  "label": "For product"
+		},
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial",
+          "label": "Testimonial"
+        }
+      ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

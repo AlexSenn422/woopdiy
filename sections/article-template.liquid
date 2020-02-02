@@ -1,0 +1,378 @@
+{% comment %}
+<div class="section-header text-center">
+  <h1 class="article__title">{{ article.title }}</h1>
+ 
+</div>
+{% endcomment %}
+
+<div class="rte">
+  {{ article.content }}
+</div>
+
+{% if section.settings.show_share_buttons %}
+  {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+{% endif %}
+
+
+<style type="text/css">
+  .template-article ul {
+    list-style: initial;
+    margin-left: 16px;
+  }
+  
+  .template-article ol {
+    list-style: decimal;
+    margin-left: 10px;
+    line-height: 26pt;
+  }
+  
+  h1 {
+        font-size: 43px;
+    color: #333;
+    font-weight: 900;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .template-article ul ol, .template-article ol ul {
+    margin-left: 30px;
+    line-height: 20pt;
+  }
+  
+  .template-article .single-article {
+    margin-top: 0;
+    line-height: 22pt;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .template-article .single-article.type2 .post-banner {
+      margin-bottom: 50px;
+    }
+  }
+  
+  .template-article .post-banner img {
+    width: 100%;
+  }
+
+  .template-article .post-content {
+    font-size: {{section.settings.font_size}}px;
+  }
+  
+    
+  {% if article.metafields["global"]["article-view"] == 'type1' %}
+  	.template-article .type2 {
+      display: none !important;
+    }
+  
+  	.template-article .title-row {
+      width: 100%;
+    }
+
+	.template-article .title-row .blog-title {
+	    width: calc( 100% - 230px );
+	}
+  
+  {% elsif article.metafields["global"]["article-view"] == 'type2' %}
+  	.template-article .type1 {
+      display: none !important;
+    }
+  
+  	.template-article .post-section.post-description {
+      max-width: unset;
+    }
+  
+  	.template-article .post-banner {
+      width: 50%;
+      float: right;
+      margin-left: 40px;
+    }
+  
+  	.template-article .post-banner img {
+      border-top-left-radius: .8em;
+      border-bottom-left-radius: .8em;
+    }
+  
+  	.template-article .title-row {
+      width: calc(50% - 40px);
+      float: left;
+    }
+  
+  	.template-article .title-row .blog-title {
+      width: 100%;
+    }
+      
+    .template-article .social-sharing-group .social-sharing {
+      margin-bottom: 30px;
+    }
+  
+  	@media screen and (max-width: 767px) {
+      .template-article .post-banner {
+        width: 100%;
+      }
+      
+      .template-article .post-banner img {
+        border-radius: 0;
+      }
+      
+      .template-article .social-sharing-group .social-sharing {
+        max-width: 170px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 0;
+        color: #96669b;
+      }
+      
+      .template-article .title-row {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+  {% endif %}
+  
+  .template-article .post-extra {
+    display: inline-block;
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    background: #F0EDF7;
+    margin-left: 50%;
+  }
+  
+  .template-article .post-extra .section-header {
+    background: #fff;
+    border: solid 1px #a8a8d8;
+    border-radius: .1em;
+    padding: 10px;
+  }
+  
+  .template-article .post-extra .section-header img {
+    display: inline;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    max-height: 40px;
+    margin-top: -5px;
+  }
+  
+  .template-article .post-section.post-extra h2.section-title {
+    margin-bottom: 0;
+  }
+  
+  .template-article ul.social-sharing {
+    position: absolute;
+    list-style: none;
+  }
+
+  .template-article h1.article__title {
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  .template-article p {
+    margin: 20px 0;
+  }
+
+  .template-article h3.subsection-title {
+    color: #b9acd7;
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .template-article .post-section {
+    padding-top: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .template-article .subsection {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .template-article .subsection ul {
+    margin-top: 20px;
+  }
+
+  .template-article .title-row {
+    padding-top: 30px;
+/*     display: inline-block; */
+  }
+
+  .template-article .title-row .blog-title {
+    float: left;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .template-article .title-row .blog-title h2 {
+    font-size: 43px;
+    color: #333;
+    font-weight: 600;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .template-article .title-row .social-sharing-group {
+    display: inline-block;
+    float: right;
+    max-width: 215px;
+    background: #96669b;
+    color: #fff;
+    padding: 2px 5px 0 20px;
+  }
+
+  .template-article .title-row .social-sharing-group .social-sharing {
+    margin-top: 0;
+  }
+
+  .template-article .title-row .social-sharing-group .social-sharing .btn {
+    margin: 3px 15px 0 0;
+  }
+
+  .template-article .title-row .social-sharing-group .social-sharing i.fa {
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .template-article .post-section h2.section-title {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+    margin-bottom: 25px;
+  }
+
+  .template-article .post-description {
+    padding-top: 0;
+  }
+
+  .template-article .back-button-row {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .template-article .back-button-row .back-to-news-btn {
+    border: solid 2px #96669b;
+    border-radius: .5em;
+    padding: 13px 35px;
+    font-weight: 600;
+  }
+
+  .template-article .back-button-row .back-to-news-btn:hover {
+    background: #96669b;
+    color: #fff;
+  }
+
+  .template-article .post-content {    
+    background: url(https://cdn.shopify.com/s/files/1/0025/0799/7284/files/Untitled-2.png);
+/*     background-size: cover; */
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .template-article .title-row .blog-title h2 {
+      font-size: 38px;
+    }
+
+    .template-article .post-section h2.section-title {
+      font-size: 26px;
+    }
+
+    .template-article h3.subsection-title {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .template-article .title-row .blog-title h2 {
+      font-size: 26px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .template-article .title-row .blog-title {
+      width: 100%;
+    }
+
+    .template-article .title-row .social-sharing-group {
+      float: left;
+    }
+
+    .template-article .social-sharing li:first-child {
+      flex: unset;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": {
+    "de": "Posts",
+    "en": "Posts",
+    "es": "Publicaciones",
+    "fr": "Articles",
+    "it": "Articoli",
+    "ja": "投稿",
+    "pt-BR": "Posts"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": {
+        "de": "Autor anzeigen",
+        "en": "Show author",
+        "es": "Mostrar autor",
+        "fr": "Afficher l'auteur",
+        "it": "Mostra autore",
+        "ja": "執筆者を表示する",
+        "pt-BR": "Exibir autor(a)"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fr": "Afficher la date",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "pt-BR": "Exibir data"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": {
+        "de": "Buttons für Social Media anzeigen",
+        "en": "Show social sharing buttons",
+        "es": "Mostrar botones para compartir en redes sociales",
+        "fr": "Afficher les boutons de partage sur les médias sociaux",
+        "it": "Mostra i pulsanti per la condivisione sui social",
+        "ja": "ソーシャル共有ボタンを表示する",
+        "pt-BR": "Exibir botões de compartilhamento em redes sociais"
+      },
+      "default": true
+    },
+	{
+      "type":      "range",
+      "id":        "font_size",
+      "min":       10,
+      "max":        40,
+      "step":       1,
+      "unit":       "px",
+      "label":     "Regular Font size",
+      "default":   16
+  	}
+  ]
+}
+{% endschema %}

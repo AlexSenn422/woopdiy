@@ -1,0 +1,72 @@
+<section class="page-section custom-content-section ">
+  <div class="centered asided reveal">
+    <aside>
+      <h2 class="section-title"><i>{{ section.settings.cursive }}</i>{{ section.settings.title | replace: "|", "<br>" }}</h2>
+      <p>{{ section.settings.text }}</p>
+      <p><a class="btn btn-light" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a></p>
+    </aside>
+    <aside>
+      <div class="image-circle" style="background-image: url('{{ section.settings.image | img_url: '800x800' }}')"></div>
+    </aside>
+  </div>
+  <div class="section-separator"></div>
+</section>
+
+{% schema %}
+
+{
+  "name": "Content section",
+  "class": "index-section index-section--flush",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": {
+        "de": "Foto",
+        "en": "Image",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "pt-BR": "Imagem"
+      }
+    },
+    {
+      "type": "text",
+      "id": "cursive",
+      "label": "Cursive"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+		"type": "richtext",
+		"id": "text",
+		"label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+  {
+  	"name": "Content Section"
+  }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

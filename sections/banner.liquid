@@ -1,0 +1,139 @@
+<section class="page-section banner reveal">
+  {% comment %} <div class="floating-image floating-image-1"><img src="{{ "lemongrass.png" | asset_url }}"></div> {% endcomment %}
+  <div class="banner-image page-width">
+    {% unless section.settings.wide_image1 == blank %}
+    <div class="banner-featured-image"> <a href="{{section.settings.wide_img1_link}}"> <img src = "{{ section.settings.wide_image1 | img_url: 'master' }}" ></a> </div>
+    {% endunless %}
+    {% unless section.settings.wide_image2 == blank %}
+    <div class="banner-featured-image"> <a href="{{section.settings.wide_img2_link}}"> <img src = "{{ section.settings.wide_image2 | img_url: 'master' }}" > </a> </div>
+    {% endunless %}
+  </div>
+  <div class="banner-email-subscribe">
+    <div class="centered">
+      <div class="text-row"> <h2><i>{{ section.settings.coupon_text }} </i></h2> </div>
+      <div class="btn-group">
+        <form method="post" action="/contact#ContactFooter" id="ContactFooter" accept-charset="UTF-8" class="contact-form" novalidate="novalidate" data-omnisend-captured-form="true"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+            <div class="input-group ">
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input type="email" name="contact[email]" id="ContactFooter-email" class="email-input input-group__field newsletter__input" value="" aria-label="Email address" aria-required="true" required="" autocorrect="off" autocapitalize="off" placeholder="Enter Your Email">
+              <input type="submit" class="email-submit newsletter__submit" name="commit" id="Subscribe" value="{{ section.settings.coupon_btn_text }}">
+              {% comment %} <span id="ContactFooter-email-error" class="input-error-message"> .</span> {% endcomment %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="centered asided">
+    <aside class="aside-image">
+      <img src = "{{ section.settings.image | img_url: 'master' }}" >
+    </aside>
+    <aside class="aside-text">
+      <h2 class="section-title"><i>{{ section.settings.cursive }}</i>&nbsp;<span>{{ section.settings.title | replace: "|", "<br>" }}</span></h2>
+     {{ section.settings.text }} 
+      {% comment %} <p><a class="btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a></p> {% endcomment %}
+    </aside>
+  </div>
+</section>
+
+<script>
+  jQuery(document).ready(function($) {
+    console.log("FFF");
+    $('form.contact-form').submit(function(e){
+      var yn = confirm('{{section.settings.email_alert_text}}');
+      console.log(yn);
+      if(yn == true){
+        form.submit();
+      }
+      else {
+        e.preventDefault();
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Banner",
+  "class": "index-section index-section--flush",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "wide_image1",
+      "label": "Left Banner Image"
+    },
+    {
+      "type": "url",
+      "id": "wide_img1_link",
+      "label": "Banner Left Image link"
+    },
+    {
+      "type": "image_picker",
+      "id": "wide_image2",
+      "label": "Right Banner Image"
+    },
+    {
+      "type": "url",
+      "id": "wide_img2_link",
+      "label": "Banner Right Image link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": {
+        "de": "Foto",
+        "en": "Image",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "pt-BR": "Imagem"
+      }
+    },
+    {
+      "type": "text",
+      "id": "cursive",
+      "label": "Cursive"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+		"type": "richtext",
+		"id": "text",
+		"label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "coupon_text",
+      "label": "Banner Coupon Text"
+    },
+    {
+      "type": "text",
+      "id": "coupon_btn_text",
+      "label": "Coupon Button Text"
+    },
+    {
+      "type": "text",
+      "id": "email_alert_text",
+      "label": "Email confirmation text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}

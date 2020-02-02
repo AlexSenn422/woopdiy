@@ -1,0 +1,806 @@
+{
+  "current": {
+    "color_text": "#3d4246",
+    "color_body_text": "#69727b",
+    "color_sale_text": "#557b97",
+    "color_button": "#557b97",
+    "color_button_text": "#fff",
+    "color_small_button_text_border": "#3d4246",
+    "color_text_field_text": "#000",
+    "color_text_field_border": "#949494",
+    "color_text_field": "#fff",
+    "color_image_overlay_text": "#fff",
+    "color_image_overlay": "#3d4246",
+    "image_overlay_opacity": 40,
+    "color_borders": "#e8e9eb",
+    "color_body_bg": "#fff",
+    "type_header_font": "work_sans_n6",
+    "type_header_base_size": 30,
+    "type_base_font": "work_sans_n4",
+    "type_base_size": 19,
+    "type_bold_product_titles": false,
+    "share_image": "",
+    "share_facebook": true,
+    "share_twitter": false,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/woopdiyinsta\/",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "",
+    "footer_text_first": "You main stop for glass bottles, roller bottles, and spray bottles.  All different shapes and sizes of essential oil bottles - even the standard amber glass colored bottles!",
+    "footer_text_second": "Stay connected with us on social media.",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/transparent_c496f10f-771d-40c6-a078-09a6cd417087.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#96669b",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "align_logo": "left",
+          "logo": "",
+          "logo_max_width": 100,
+          "main_linklist": "main-menu",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#7796a8",
+          "color_text": "#fff"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "link_list": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "link_list-1": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "text": {
+            "type": "text",
+            "settings": {
+              "title": "Talk about your business",
+              "text": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+            }
+          },
+          "newsletter": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Newsletter"
+            }
+          }
+        },
+        "block_order": [
+          "link_list",
+          "link_list-1",
+          "text",
+          "newsletter"
+        ],
+        "settings": {
+          "show_payment_icons": false,
+          "color_footer_bg": "#f5f5f5",
+          "color_footer_text": "#3d4246"
+        }
+      },
+      "banner": {
+        "type": "banner",
+        "settings": {
+          "wide_image1": "",
+          "wide_img1_link": "",
+          "wide_image2": "",
+          "wide_img2_link": "",
+          "image": "",
+          "cursive": "We are oil Diy",
+          "title": "aficio|nados",
+          "text": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ex, cumque natus ipsum vero magnam.<\/p>",
+          "button_label": "Shop now",
+          "button_link": "https:\/\/google.com",
+          "coupon_text": "",
+          "coupon_btn_text": "",
+          "email_alert_text": ""
+        }
+      },
+      "categories": {
+        "type": "categories",
+        "blocks": {
+          "1547242807812": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1547242814009": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1547242819562": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1547242825173": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "1547242807812",
+          "1547242814009",
+          "1547242819562",
+          "1547242825173"
+        ],
+        "settings": {}
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "blocks": {
+          "1547238753394": {
+            "type": "featured_product",
+            "settings": {
+              "product": ""
+            }
+          },
+          "1547238762259": {
+            "type": "featured_product",
+            "settings": {
+              "product": ""
+            }
+          },
+          "1547238769066": {
+            "type": "featured_product",
+            "settings": {
+              "product": ""
+            }
+          },
+          "1547238773799": {
+            "type": "featured_product",
+            "settings": {
+              "product": ""
+            }
+          }
+        },
+        "block_order": [
+          "1547238753394",
+          "1547238762259",
+          "1547238769066",
+          "1547238773799"
+        ],
+        "settings": {}
+      },
+      "additional-content": {
+        "type": "additional-content",
+        "settings": {
+          "image": "",
+          "cursive": "Compassion and",
+          "title": "giving|back",
+          "text": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolor ullam perspiciatis obcaecati.<\/p>",
+          "button_label": "Know more",
+          "button_link": "https:\/\/google.com"
+        }
+      },
+      "latest-posts": {
+        "type": "latest-posts",
+        "settings": {
+          "title": "mag.",
+          "blog": ""
+        }
+      },
+      "instagram": {
+        "type": "instagram",
+        "settings": {
+          "instagram": "11464164403.fbaa0bc.613db38b84c8452fb5811df7e5ded1de"
+        }
+      },
+      "1547245258606": {
+        "type": "banner",
+        "settings": {
+          "wide_image1": "shopify:\/\/shop_images\/love_bundle_home_header.jpg",
+          "wide_img1_link": "https:\/\/woopdiy.com\/products\/valentines-day-essential-oil-labels-and-blend-recipes",
+          "wide_image2": "shopify:\/\/shop_images\/Untitled-4.png",
+          "wide_img2_link": "#",
+          "image": "shopify:\/\/shop_images\/Homepage_hero_trans.png",
+          "cursive": "We are oil Diy",
+          "title": "aficionados",
+          "text": "",
+          "button_label": "Get In the know...",
+          "button_link": "https:\/\/forms.omnisrc.com\/signup\/v1\/5c9e95da8653ed1769543b54_5cf5dc1b8653ed76f6e72836.html",
+          "coupon_text": "Be the first to know...",
+          "coupon_btn_text": "Add me",
+          "email_alert_text": "ddd"
+        }
+      },
+      "1547245553435": {
+        "type": "categories",
+        "blocks": {
+          "1547245569742": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "containers-1"
+            }
+          },
+          "1547245559628": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "kits"
+            }
+          },
+          "1547245564782": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "cases"
+            }
+          },
+          "1547245574479": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "rollers"
+            }
+          }
+        },
+        "block_order": [
+          "1547245569742",
+          "1547245559628",
+          "1547245564782",
+          "1547245574479"
+        ],
+        "settings": {}
+      },
+      "1547245583666": {
+        "type": "featured-products",
+        "blocks": {
+          "1547245589215": {
+            "type": "featured_product",
+            "settings": {
+              "product": "15ml-bottle-upcycle-kit"
+            }
+          },
+          "1547245594035": {
+            "type": "featured_product",
+            "settings": {
+              "product": "essential-oil-pop-up-top-sprayer"
+            }
+          },
+          "1547245598443": {
+            "type": "featured_product",
+            "settings": {
+              "product": "gradient-color-10-ml-glass-rollers-set-of-7"
+            }
+          },
+          "1547245603750": {
+            "type": "featured_product",
+            "settings": {
+              "product": "matte-aluminum-essential-oil-inhaler-tube"
+            }
+          }
+        },
+        "block_order": [
+          "1547245589215",
+          "1547245594035",
+          "1547245598443",
+          "1547245603750"
+        ],
+        "settings": {}
+      },
+      "1547245612422": {
+        "type": "additional-content",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/the-son-becomes-the-father.jpg",
+          "cursive": "Compassion and",
+          "title": "giving|back",
+          "text": "<p>Central to our purpose is giving back to people in need. &nbsp;Follow the stories here.<\/p>",
+          "button_label": "Read more",
+          "button_link": "shopify:\/\/pages\/giving-back"
+        }
+      },
+      "1547245663129": {
+        "type": "latest-posts",
+        "settings": {
+          "title": "the 4-1-1",
+          "blog": "news"
+        }
+      },
+      "1547245673534": {
+        "type": "instagram",
+        "settings": {
+          "instagram": "11464164403.fbaa0bc.613db38b84c8452fb5811df7e5ded1de"
+        }
+      },
+      "about-page": {
+        "type": "about-page",
+        "settings": {
+          "top_image": "",
+          "bottom_image": "shopify:\/\/shop_images\/7ce76e2ad69c01b9e3949a466dd4a2aa.png"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_variant_labels": true,
+          "enable_payment_button": false,
+          "show_share_buttons": true
+        }
+      },
+      "giving-back-page": {
+        "type": "giving-back-page",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/elderly-couple-hands.jpg",
+          "cursive": "Compassion and",
+          "title": "giving back",
+          "text": "<p>Here at Woop DIY one of our main focal points is giving back to those in need.&nbsp; This page will be our central hub of the charity that we are giving to, along with a measurement of where we are to our goal.<\/p>\n<p><\/p>\n<p>We will focus on different charities and rotate different ones.&nbsp; Be on the lookout for more information.<\/p>",
+          "floating-text": "<p>After the January 2010 earthquake in Haiti, several midwives traveled there to provide disaster relief and maternity care. Their hearts were touched in so many ways. They sadly learned to say &ldquo;I am sorry, your baby has died&rdquo; in Creole over and over again. Realizing the huge need for midwives and access to maternity care, they committed to return and open a birth center and midwifery school to empower the women and families of Haiti.<\/p>",
+          "video": "https:\/\/www.youtube.com\/watch?v=0CF6R344Jt8",
+          "title_two": "A portion of all sales goes to charity. It's that simple.",
+          "text_info": "<p>&nbsp;Currently our charity of choice is MamaBaby Haiti.&nbsp;&nbsp;No woman or child should ever die because of where they live.&nbsp; Haiti has the highest infant and maternal mortality rate in the Western Hemisphere.&nbsp; They&rsquo;ve set out to change that.<\/p>",
+          "image_two": "",
+          "button": "Learn more",
+          "btn_link": "http:\/\/mamababyhaiti.org\/"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "blocks": {
+          "1550244142091": {
+            "type": "featured_product",
+            "settings": {
+              "collection_handle": "",
+              "button_title": "",
+              "button_link": "",
+              "image_one": "",
+              "text_one": "",
+              "link_one": "",
+              "image_two": "",
+              "text_two": "",
+              "link_two": "",
+              "image_three": "",
+              "text_three": "",
+              "link_three": "",
+              "collection_popular_handle": "",
+              "collection_featured_handle": ""
+            }
+          }
+        },
+        "block_order": [
+          "1550244142091"
+        ],
+        "settings": {}
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "blog_show_author": true,
+          "blog_show_date": true,
+          "show_share_buttons": true,
+          "font_size": 19
+        }
+      },
+      "collection-all-template": {
+        "type": "collection-all-template",
+        "settings": {
+          "hide-header": false
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": 3
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "grid",
+          "blog_show_author": true,
+          "blog_show_date": true
+        }
+      },
+      "product-testimonials": {
+        "type": "product-testimonials",
+        "blocks": {
+          "1559273417134": {
+            "type": "testimonial",
+            "settings": {
+              "product": "15ml-bottle-upcycle-kit",
+              "photo": "shopify:\/\/shop_images\/Testimonial.jpg",
+              "name": "Toni",
+              "description": "I'M In LOVE!",
+              "testimonial": "<p>Did my upcycle project yesterday, and let me just say....I&rsquo;M IN LOVE! What an awesome idea creating a kit with everything you need to repurpose your empty bottles! You guys are awesome!!&nbsp;<span style=\"text-decoration: none;\">❤️<\/span><\/p>"
+            }
+          },
+          "1559273798274": {
+            "type": "testimonial",
+            "settings": {
+              "product": "15ml-bottle-upcycle-kit",
+              "photo": "shopify:\/\/shop_images\/Testimonial2.jpg",
+              "name": "Chris",
+              "description": "So happy...",
+              "testimonial": "<p>So happy to finally empty enough bottles since I started with DoTERRA 7 months ago to make my great &ldquo;Project Upcycle&rdquo; sprayers!! <a href=\"https:\/\/www.facebook.com\/messages\/t\/chris.trentmann\"><\/a>Thank you to WoopDIY.com.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1559273417134",
+          "1559273798274"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "1547245258606",
+      "1547245553435",
+      "1547245583666",
+      "1547245612422",
+      "1547245663129",
+      "1547245673534"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "color_text": "#3d4246",
+      "color_body_text": "#69727b",
+      "color_sale_text": "#557B97",
+      "color_borders": "#e8e9eb",
+      "color_button": "#557B97",
+      "color_button_text": "#fff",
+      "color_small_button_text_border": "#3d4246",
+      "color_text_field": "#fff",
+      "color_text_field_text": "#000",
+      "color_text_field_border": "#949494",
+      "color_image_overlay_text": "#fff",
+      "color_image_overlay": "#3d4246",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#fff",
+      "type_header_font": "work_sans_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "work_sans_n4",
+      "type_base_size": 16,
+      "type_bold_product_titles": false,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {}
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {}
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "link_list-1": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "text": {
+              "type": "text",
+              "settings": {}
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "link_list",
+            "link_list-1",
+            "text",
+            "newsletter"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "feature-row",
+        "slideshow"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "type_bold_product_titles": true,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "message": true,
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_variant_labels": true,
+            "show_share_buttons": true
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {}
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {}
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {}
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "link_list-1": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "text": {
+              "type": "text",
+              "settings": {}
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "link_list",
+            "link_list-1",
+            "text",
+            "newsletter"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

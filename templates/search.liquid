@@ -1,0 +1,114 @@
+{% paginate search.results by 10 %}
+<div class=" search-template">
+<div class="page-width">
+  {% if search.performed == false %}
+    <div class="text-center">
+      <h1 class="h2">{{ 'general.search.title' | t }}</h1>
+  {% else %}
+    <div class="section-header text-center">
+      <h1 class="h2">
+        <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
+        {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+      </h1>
+  {% endif %}
+      <div class="grid">
+        <div class="grid__item medium-up--two-fifths medium-up--push-three-tenths">
+          <form action="/search" method="get" role="search" class="search">
+            <div aria-live="polite" class="form-message form-message--error search-result-error-message hide" data-search-error-message>
+              <ul id="error-search-form">
+                <li>{{ 'general.search.empty_search_message' | t }}</li>
+              </ul>
+            </div>
+
+            <div class="input-group">
+              <input type="search"
+                id="SearchInput"
+                class="input-group__field search__input"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="{{ 'general.search.placeholder' | t }}"
+                aria-label="{{ 'general.search.placeholder' | t }}"
+                >
+              <span class="input-group__btn">
+                <button id="SearchResultSubmit" class="btn search__submit" type="submit">{{ 'general.search.submit' | t }}</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {% if search.performed and search.results_count == 0 %} 
+        <div class="rte">
+          <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+        </div>
+      {% endif %}
+  </div>
+</div>
+
+
+{% if search.performed %}
+  {% if search.results_count > 0 %} 
+  {% endif %}
+  <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+   
+    <div class="centered product-grid product-main-grid"> 
+    {% for item in search.results %}
+{%- include 'bold-product-json', product: item -%}
+{%- include 'bold-product' with item, hide_action: 'skip' -%} 
+        {% if item.object_type == 'product' %}
+      {% assign product = item %}
+      <div class="product">
+        {% assign featured_image = bold_selected_or_first_available_variant.featured_image | default: product.featured_image %}
+        <a href="{{ product.url }}" class="product-image" style="background-image: url('{{ featured_image | img_url: '600x600' }}')"></a>
+        <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+        <div class="price">{{ bold_price | money }}</div>
+        <div class="quantity">
+          <input type="hidden" class="variation-id" value="{{ bold_selected_or_first_available_variant.id }}" name="variation">
+          <input type="hidden" class="quantity-input" value="1" name="quantity">
+          <a href="#!" class="less">-</a>
+          <span class="num">1</span>
+          <a href="#!" class="more">+</a>
+        </div>
+        <div class="add-to-cart-container">
+          {% if product.available %}
+          	<a href="#!" class="add-to-cart">Add to cart</a>
+          {% else %}
+          	<span class="add-to-cart-dis">Sold out</span>
+          {% endif %}
+        </div>
+      </div>
+          {% else %}
+            <div class="product-card product-card--list">
+              <a href="{{ item.url }}" class="full-width-link">
+                <span class="visually-hidden">{{ item.title }}</span>
+              </a>
+              <div class="list-view-item__link">
+                {% if item.image %}
+                  <div class="list-view-item__image-column">
+                    <div class="list-view-item__image-wrapper product-card__image-wrapper">
+                      <img class="list-view-item__image" src="{{ item.image.src | img_url: '600x600' }}" alt="{{ item.image.alt | escape }}">
+                    </div>
+                  </div>
+                {% endif %}
+
+                <div class="list-view-item__title-column">
+                  <div class="list-view-item__title" aria-hidden="true">
+                    <span class="product-card__title">{{ item.title }}</span>
+                  </div>
+                  <div>
+                    {% if item.published_at %}{{ item.published_at | date: "%b %d, %Y" }} &#8212; {% endif %}
+                    {{ item.content | strip_html | truncate: 200 }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+    {% endfor %}
+  </div> 
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+{% endif %}
+ </div>
+{% endpaginate %}

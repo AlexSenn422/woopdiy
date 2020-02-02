@@ -1,0 +1,216 @@
+{% for block in section.blocks %}
+{% if collection.handle == block.settings.collection_handle %}
+{% assign featured_collection = block.settings.collection_featured_handle %}
+{% assign popular_collection = block.settings.collection_popular_handle %}
+{% assign button_title = block.settings.button_title %}
+{% assign button_link = block.settings.button_link %}
+{% endif %}  
+{% endfor %}
+
+<section class="page-section banner collection-head ">
+  <div class="floating-image floating-image-1 reveal-collection"><img src="{{ "lemongrass.png" | asset_url }}"></div>
+  <div class="centered asided">
+    <aside>
+      <h1 class="section-title reveal-collection reveal-collection ">
+        <span role="text">
+          <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+          {{ collection.title | replace: "|", "<br>" }}
+        </span>
+       </h1>
+       <div class="collection-desc reveal-collection">
+          {{ collection.description }}
+       </div>
+      {% if button_title != blank %}
+      <p><a class="btn reveal-collection" href="{{button_link}}">{{button_title}}</a></p>
+      {% endif %}
+    </aside>
+    <aside class="reveal-collection">
+      <img src="{{ collection.image | img_url: '1200x800' | format: 'png'}}">
+    </aside>
+  </div>
+</section>
+
+<section class="page-section categories-section ">
+  <div class="floating-image floating-image-2"><img src="{{ "cocoa.png" | asset_url }}"></div>
+  <div class="floating-image floating-image-3"><img src="{{ "cream.jpg" | asset_url }}"></div>
+  <div class="centered">
+    <div class="categories-grid reveal-collection ">
+      {% for block in section.blocks %}  
+      {% if block.settings.collection_handle == collection.handle %}
+        {% if block.settings.text_one != blank %}
+        <div class="category">
+          <a href="{{ block.settings.link_one }}" class="category-image" style="background-image: url('{{ block.settings.image_one | img_url: '600x600' }}');"></a>
+          <h3><a href="{{ block.settings.link_one }}">{{ block.settings.text_one }}</a></h3>
+        </div>
+        {% endif %}
+        {% if block.settings.text_one != blank %}
+        <div class="category">
+          <a href="{{ block.settings.link_two }}" class="category-image" style="background-image: url('{{ block.settings.image_two | img_url: '600x600' }}');"></a>
+          <h3><a href="{{ block.settings.link_two }}">{{ block.settings.text_two }}</a></h3>
+        </div>
+        {% endif %}
+        {% if block.settings.text_one != blank %}
+        <div class="category">
+          <a href="{{ block.settings.link_three }}" class="category-image" style="background-image: url('{{ block.settings.image_three | img_url: '600x600' }}');"></a>
+          <h3><a href="{{ block.settings.link_three }}">{{ block.settings.text_three }}</a></h3>
+        </div>
+        {% endif %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="page-section featured-products light  ">
+  <h2 class="section-title reveal-collection"><i>Most</i> popular</h2>
+  <div class="centered product-grid reveal-collection">
+    {% assign popular = collections[popular_collection].products %}
+    {% for product in popular limit: 4 %}
+      <div class="product">
+        {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+        <a href="{{ product.url }}" class="product-image" style="background-image: url('{{ featured_image | img_url: '600x600' }}')"></a>
+        <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+        <div class="price"><span class="money" data-product-id="{{ product.id }}">{{ product.price | money }}</span></div>
+        <div class="quantity">
+          <input type="hidden" class="variation-id" value="{{ product.selected_or_first_available_variant.id }}" name="variation">
+          <input type="hidden" class="quantity-input" value="1" name="quantity">
+          <a href="#!" class="less">-</a>
+          <span class="num">1</span>
+          <a href="#!" class="more">+</a>
+        </div>
+        <div class="add-to-cart-container">
+          {% if product.available %}
+          	<a href="#!" class="add-to-cart">Add to cart</a>
+          {% else %}
+          	<span class="add-to-cart-dis">Sold out</span>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section featured-products light  ">
+  <h2 class="section-title reveal-collection"><i>Featured</i> products</h2>
+  <div class="centered product-grid reveal-collection">
+     {% assign featured = collections[featured_collection].products %}
+    {% for product in featured limit: 4 %}
+      <div class="product">
+        {% assign featured_image = product.featured_image | default: product.featured_image %}
+        <a href="{{ product.url }}" class="product-image" style="background-image: url('{{ featured_image | img_url: '600x600' }}')"></a>
+        <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+        <div class="price"><span class="money" data-product-id="{{ product.id }}">{{ product.price | money }}</span></div>
+        <div class="quantity">
+          <input type="hidden" class="variation-id" value="{{ product.selected_or_first_available_variant.id }}" name="variation">
+          <input type="hidden" class="quantity-input" value="1" name="quantity">
+          <a href="#!" class="less">-</a>
+          <span class="num">1</span>
+          <a href="#!" class="more">+</a>
+        </div>
+        <div class="add-to-cart-container">
+          {% if product.available %}
+          	<a href="#!" class="add-to-cart">Add to cart</a>
+          {% else %}
+          	<span class="add-to-cart-dis">Sold out</span>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Collection", 
+    "blocks": [
+      {
+        "type": "featured_product",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection_handle",
+            "label": "Link to collection",
+		    "info": "Link to the main collection"
+          }, 
+          {
+            "type": "text",
+            "id": "button_title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          },
+          {
+             "type":      "header",
+             "content":   "Sub categories" 
+          },
+          {
+            "type": "image_picker",
+            "id": "image_one",
+            "label": "First Image"
+          },
+          {
+            "type": "text",
+            "id": "text_one",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "link_one",
+            "label": "Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_two",
+            "label": "First Image"
+          },
+          {
+            "type": "text",
+            "id": "text_two",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "link_two",
+            "label": "Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_three",
+            "label": "First Image"
+          },
+          {
+            "type": "text",
+            "id": "text_three",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "link_three",
+            "label": "Link"
+          },
+ 		  {
+             "type":      "header",
+             "content":   "Featured products" 
+          },
+          {
+            "type": "collection",
+            "id": "collection_popular_handle",
+            "label": "Popular collection"
+          }, 
+          {
+            "type": "collection",
+            "id": "collection_featured_handle",
+            "label": "Featured collection"
+          } 
+        ]
+      }
+    ] 
+  }
+{% endschema %}
+

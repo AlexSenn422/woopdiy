@@ -1,0 +1,909 @@
+<div class="post-section" id="post-section">
+  <section>
+    <div class="title-name">
+      <h1>Guide to Essential Oil Dilution</h1>
+    </div>
+    <p>
+      Using pure essential oils on your skin is a time-tested model but you
+      should also ensure you are taking into account some basic essential oil
+      safety when applying them to your skin.
+    </p>
+    <br />
+    <p>
+      Generally you will be applying your essential oils where you are needing
+      them for a localized effect.
+    </p>
+    <br />
+    <p>
+      For instance, after a long day of holding a precious little baby … you may
+      want to apply some directly to your arm for some sore muscle relief. Or
+      you use them for body care, skin care or facial applications.
+    </p>
+    <br />
+    <p>
+      Regardless of how you plan to use your oils topically, the resources in
+      this guide will help you get started. This is your central place for
+      common questions and most importantly a handy essential oil dilution
+      calculator to help you with your dilution ratios!
+    </p>
+    <p>
+      It will guide you in knowing how much of your essential oil to add to your
+      blend to get to the desired dilution percentage.
+    </p>
+    <br />
+    <img
+      src="https://cdn.shopify.com/s/files/1/0025/0799/7284/files/essential-oil-dilution-calculator.png?5626"
+    />
+
+    <br />
+    <br />
+    <div class="type">
+      <h2 class="title">
+        Select the use for the blend
+      </h2>
+      <div class="content">
+        <div class="content">
+          <label class="list-item">
+            <input type="radio" checked="checked" name="radio" value="0" />
+            <span class="checkmark"></span>
+            Targeted Concern (25%)
+          </label>
+          <label class="list-item">
+            <input type="radio" name="radio" value="1" />
+            <span class="checkmark"></span>
+            Strong : Everyday (10%)
+          </label>
+          <label class="list-item">
+            <input type="radio" name="radio" value="2" />
+            <span class="checkmark"></span>
+            Regular : Everyday / 11 years + old (5%)
+          </label>
+          <label class="list-item">
+            <input type="radio" name="radio" value="3" />
+            <span class="checkmark"></span>
+            Mild : Everyday / 11 years old (3%)
+          </label>
+          <label class="list-item">
+            <input type="radio" name="radio" value="4" />
+            <span class="checkmark"></span>
+            Pregnant / 5 years+ old (2%)
+          </label>
+          <label class="list-item">
+            <input type="radio" name="radio" value="5" />
+            <span class="checkmark"></span>
+            Elderly or Sensitive / 1 year+ old (1%)
+          </label>
+          <label class="list-item">
+            <input type="radio" name="radio" value="6" />
+            <span class="checkmark"></span>
+            Very Sensitive / Birth to 1 year old (0.5%)
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-size">
+      <h2 class="title">
+        Select the bottle size you are using.
+      </h2>
+      <div class="size-option">
+        <select class="size">
+          <option value="0">15ml</option>
+          <option value="1" selected>10ml</option>
+          <option value="2">5ml</option>
+          <option value="3">3ml</option>
+          <option value="4">2ml</option>
+          <option value="5">1ml</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="results">
+      <h2 class="title">You will want to use:</h2>
+      <br />
+      <p class="total">
+        <strong id="total"></strong> total drops of essential oil
+      </p>
+      <br />
+      <p class="description">
+        This is a <strong id="oilTotal"></strong> blend to be used in a
+        <strong id="containerSize"></strong> bottle for
+        <strong id="response"></strong>. Be sure to fill the remainder of your
+        bottle off with a carrier oil.
+      </p>
+      <br />
+      <p id="tps">TPS is an abbreviation for Toothpick Swirl.</p>
+    </div>
+
+    <div>
+      <table id="example" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>
+              <h2 class="title">
+                Essential Oil Name
+              </h2>
+            </th>
+            <th><h2 class="title">% of total</h2></th>
+            <th><h2 class="title"># of drops</h2></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input
+                type="text"
+                id="oil-name-1"
+                name="oil-name-1"
+                style="width:100%"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                id="perOfOil1"
+                name="perOfOil"
+                style="width:100%"
+              />
+            </td>
+            <td id="drops1"></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="text"
+                id="oil-name-2"
+                name="oil-name-2"
+                style="width:100%"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                id="perOfOil2"
+                name="perOfOil"
+                style="width:100%"
+              />
+            </td>
+            <td id="drops2"></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="text"
+                id="oil-name-3"
+                name="oil-name-3"
+                style="width:100%"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                id="perOfOil3"
+                name="perOfOil"
+                style="width:100%"
+              />
+            </td>
+            <td id="drops3"></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="text"
+                id="oil-name-4"
+                name="oil-name-4"
+                style="width:100%"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                id="perOfOil4"
+                name="perOfOil"
+                style="width:100%"
+              />
+            </td>
+            <td id="drops4"></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="text"
+                id="oil-name-5"
+                name="oil-name-5"
+                style="width:100%"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                id="perOfOil5"
+                name="perOfOil"
+                style="width:100%"
+              />
+            </td>
+            <td id="drops5"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <h2 class="title">Do you need to dilute?</h2>
+  <p>
+    When using essential oils for topical applications it is important to follow
+    the dilution guidelines when applying directly or creating your essential
+    oil blend. We always recommend starting with a higher dilution% to be on the
+    safe side to avoid any potential sensitivities.
+  </p>
+  <br />
+  <p>
+    While some oils are okay to apply neat, undiluted, for safe practice we
+    typically recommend against this unless specifically advised to do so.
+  </p>
+  <br />
+  <p>
+    Diluting your oils before application not only ensures the safety of the
+    application but it also has added benefits of allowing you to cover a
+    greater surface area for absorption.
+  </p>
+  <br />
+
+  <h2 class="title">Performing a patch test on your skin for sensitivity.</h2>
+  <p>
+    To determine the most optimal dilution rate for your skin, you can use our
+    recommended dilution calculator as a starting point.
+  </p>
+  <br />
+  <p>
+    Then apply to a small portion of your skin and monitor to ensure you have no
+    sensitivities to the oil(s) you are applying. This will be apparent after no
+    more than 10 minutes of applying to your skin.
+  </p>
+  <br />
+
+  <h2 class="title">Photosensitivity</h2>
+  <p>
+    Certain oils are photosensitive (citrus oils for example) and you will want
+    to use caution when applying these to your skin. Always apply these oils to
+    areas of the skin that will not have direct exposure to the sun.
+  </p>
+  <br />
+
+  <h2 class="title">Absorption rate of essential oils with carrier oils</h2>
+  <p>
+    Using carrier oils, like coconut oil, has been shown to help the absorption
+    rate on the area you are targeting. Carrier oils allow the oil to be
+    dispersed to a greater area and not experience evaporation prior to
+    application to the target area.
+  </p>
+  <br />
+  <p>
+    Because essential oils are volatile (they evaporate quickly) using drops of
+    each oil in an undiluted state will cause absorption to happen on your hands
+    prior to applying. Using carrier oils decreases this as well as allowing you
+    to apply them to a greater surface area.
+  </p>
+  <br />
+
+  <h2 class="title">Using essential oils on children</h2>
+  <p>
+    You will always want to dilute essential oils when using on children, the
+    elderly or anyone with skin sensitivities. The younger the children's age,
+    the greater the dilution should be.
+  </p>
+  <p>Be careful not to use hot oils, such as Oregano, Clove or Cinnamon</p>
+  <p>
+    The calculator below will help you determine a starting point for the
+    dilution rates to use in your blends.
+  </p>
+  <br />
+
+  <h2 class="title">Understanding maximum recommendations</h2>
+  <p>
+    The general rule of thumb when applying essential oils is that “more is not
+    better”. We generally recommend to apply the amount you initially like to
+    use and if you're not getting the benefit you hoped for, rather than to
+    increase a dilution ratio we typically recommend to apply again after a
+    short time. Apply more often with the same dilution and not to increase the
+    dilution.
+  </p>
+  <br />
+
+  <h2 class="title">Essential oil dilution chart</h2>
+  <img
+    src="https://cdn.shopify.com/s/files/1/0025/0799/7284/files/Essential_Oil_Dilution_Chart.png?5772"
+  />
+</div>
+
+<script>
+  var purpose = [
+    ["25%", "75", "50", "25", "15", "10", "5", "a specific targeted concern"],
+    [
+      "10%",
+      "30",
+      "20",
+      "10",
+      "6",
+      "4",
+      "2",
+      "a strong blend that can be used daily"
+    ],
+    [
+      "5%",
+      "15",
+      "10",
+      "5",
+      "3",
+      "2",
+      "1",
+      "everyday use by individuals 11 years or older"
+    ],
+    [
+      "3%",
+      "9",
+      "6",
+      "3",
+      "2",
+      "1",
+      "TPS",
+      "mild everyday use by individuals 11 years or older"
+    ],
+    [
+      "2%",
+      "6",
+      "4",
+      "2",
+      "1",
+      "TPS",
+      "TPS",
+      "use by those pregnant or people 5 years or older"
+    ],
+    [
+      "1%",
+      "3",
+      "2",
+      "1",
+      "TPS",
+      "TPS",
+      "TPS",
+      "use by the elderly or people with very sentitive skin that are 1 year or older"
+    ],
+    ["0.5%", "2", "1", "TPS", "TPS", "TPS", "TPS", "use by babies and infants"]
+  ];
+  var sizeRange = ["other", "15ml", "10ml", "5ml", "3ml", "2ml", "1ml"];
+  var typeIndex = 0;
+  var size = 2;
+
+  window.onload = function() {
+    init();
+  };
+
+  function init() {
+    document.getElementById("total").innerHTML = purpose[typeIndex][size];
+    document.getElementById("oilTotal").innerHTML = purpose[typeIndex][0];
+    document.getElementById("containerSize").innerHTML = sizeRange[size];
+    document.getElementById("response").innerHTML = purpose[typeIndex][7];
+    if (purpose[typeIndex][size] == "TPS") {
+      document.getElementById("tps").style.visibility = "visible";
+    } else {
+      document.getElementById("tps").style.visibility = "hidden";
+    }
+  }
+
+  $(function() {
+    //radio button change event
+    $("input[type=radio]").change(function(e) {
+      typeIndex = this.value;
+      init();
+    });
+    $(".size").change(function() {
+      size = Number(this.value) + 1;
+      init();
+    });
+    $("input[name=perOfOil]").on("input", function() {
+      // sum of % should be 100
+      var sum =
+        Number($("#perOfOil1").val()) +
+        Number($("#perOfOil2").val()) +
+        Number($("#perOfOil3").val()) +
+        Number($("#perOfOil4").val()) +
+        Number($("#perOfOil5").val());
+      if (sum > 100) {
+        var value = $(this).val();
+        $(this).val(value - (sum - 100));
+      }
+    });
+    $("#perOfOil1").on("input", function() {
+      $("#drops1").text(
+        ((purpose[typeIndex][size] * $(this).val()) / 100).toFixed(0)
+      );
+    });
+    $("#perOfOil2").on("input", function() {
+      $("#drops2").text(
+        ((purpose[typeIndex][size] * $(this).val()) / 100).toFixed(0)
+      );
+    });
+    $("#perOfOil3").on("input", function() {
+      $("#drops3").text(
+        ((purpose[typeIndex][size] * $(this).val()) / 100).toFixed(0)
+      );
+    });
+    $("#perOfOil4").on("input", function() {
+      $("#drops4").text(
+        ((purpose[typeIndex][size] * $(this).val()) / 100).toFixed(0)
+      );
+    });
+    $("#perOfOil5").on("input", function() {
+      $("#drops5").text(
+        ((purpose[typeIndex][size] * $(this).val()) / 100).toFixed(0)
+      );
+    });
+    $("#perOfOil1").inputFilter(function(value) {
+      return /^-?\d*$/.test(value);
+    });
+  });
+
+  (function($) {
+    $.fn.inputFilter = function(inputFilter) {
+      return this.on(
+        "input keydown keyup mousedown mouseup select contextmenu drop",
+        function() {
+          if (inputFilter(this.value)) {
+            this.oldValue = this.value;
+            this.oldSelectionStart = this.selectionStart;
+            this.oldSelectionEnd = this.selectionEnd;
+          } else if (this.hasOwnProperty("oldValue")) {
+            this.value = this.oldValue;
+            this.setSelectionRange(
+              this.oldSelectionStart,
+              this.oldSelectionEnd
+            );
+          } else {
+            this.value = "";
+          }
+        }
+      );
+    };
+  })(jQuery);
+</script>
+<style type="text/css">
+    table, td, th {
+      border-collapse:collapse;
+      border: 3px solid #96669B;
+    }
+  
+    th h2 {
+      margin-top: 10px !important;
+      margin-bottom: 10px !important;
+    }
+  
+	td input, td {
+      color:#000;
+      font: 1em/1.25em Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+  
+    .post-section{
+        max-width: 700px;
+        margin: 0 auto;
+        padding-left: 10px;
+    }
+
+    .container-size .size-option .size{
+        outline: 0;
+        border-width: 0 0 2px;
+        width: 100%;
+        height: 30px;
+        padding-left: 10px;
+    }
+
+    .post-section h1{
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        font-size: 34px;
+        line-height: 65px;
+    }
+
+    .post-section .type h2.title{
+        margin-top: 0;
+    }
+
+    .post-section h2.title{
+        color: #b9acd7;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 38px;
+        margin-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .post-section p, .post-section label, .post-section .size-option select{
+        color: #6d6e71;
+        font-family: 'Raleway', sans-serif;
+        font-size: 19px;
+        line-height: 29px;
+    }
+
+    .type input{
+        margin: 10px
+    }
+
+    .results h2{
+        margin-bottom: 0;
+    }
+
+    .results #total{
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    .post-section strong{
+        text-decoration: underline;
+        font-size: 20px;
+    }
+
+    .post-section .total{
+        font-weight: bold;
+        font-size: 21px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .post-section .description{
+        margin-top: 0;
+    }
+
+    /* radio color change */
+    .list-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        margin-bottom: 5px;
+        cursor: pointer;
+        font-size: 19px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .list-item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+    height: 22px;
+    width: 22px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .list-item:hover input ~ .checkmark {
+    background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a purple background */
+    .list-item input:checked ~ .checkmark {
+    background-color: #96669B;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .list-item input:checked ~ .checkmark:after {
+    display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .list-item .checkmark:after {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+  /*  add additional css  */
+    .template-article ul {
+      list-style: initial;
+      margin-left: 16px;
+    }
+
+    .template-article ol {
+      font-size: 19px;
+      list-style: decimal;
+      margin-left: 10px;
+      line-height: 26pt;
+    }
+
+    .template-article ul ol, .template-article ol ul {
+      margin-left: 30px;
+      line-height: 20pt;
+    }
+
+    .template-article .single-article {
+      margin-top: 0;
+      line-height: 22pt;
+    }
+
+    @media screen and (min-width: 768px) {
+      .template-article .single-article.type2 .post-banner {
+        margin-bottom: 50px;
+      }
+    }
+
+    .template-article .post-banner img {
+      width: 100%;
+    }
+
+    .template-article .post-content {
+      font-size: {{section.settings.font_size}}px;
+    }
+
+    {% if article.metafields["global"]["article-view"] == 'type1' %}
+      .template-article .type2 {
+        display: none !important;
+      }
+
+      .template-article .title-row {
+        width: 100%;
+      }
+
+    .template-article .title-row .blog-title {
+        width: calc( 100% - 230px );
+    }
+
+    {% elsif article.metafields["global"]["article-view"] == 'type2' %}
+      .template-article .type1 {
+        display: none !important;
+      }
+
+      .template-article .post-section.post-description {
+        max-width: unset;
+      }
+
+      .template-article .post-banner {
+        width: 50%;
+        float: right;
+        margin-left: 40px;
+      }
+
+      .template-article .post-banner img {
+        border-top-left-radius: .8em;
+        border-bottom-left-radius: .8em;
+      }
+
+      .template-article .title-row {
+        width: calc(50% - 40px);
+        float: left;
+      }
+
+      .template-article .title-row .blog-title {
+        width: 100%;
+      }
+
+      .template-article .social-sharing-group .social-sharing {
+        margin-bottom: 30px;
+      }
+
+      @media screen and (max-width: 767px) {
+        .template-article .post-banner {
+          width: 100%;
+        }
+
+        .template-article .post-banner img {
+          border-radius: 0;
+        }
+
+        .template-article .social-sharing-group .social-sharing {
+          max-width: 170px;
+          margin-left: 20px;
+          margin-top: 20px;
+          margin-bottom: 0;
+          color: #96669b;
+        }
+
+        .template-article .title-row {
+          width: 100%;
+          padding-right: 0;
+        }
+      }
+    {% endif %}
+
+    .template-article .post-extra {
+      display: inline-block;
+      width: 100%;
+      max-width: 700px;
+      padding: 30px;
+      background: #F0EDF7;
+      margin-left: 50%;
+    }
+
+    .template-article .post-extra .section-header {
+      background: #fff;
+      border: solid 1px #a8a8d8;
+      border-radius: .1em;
+      padding: 10px;
+    }
+
+    .template-article .post-extra .section-header img {
+      display: inline;
+      float: left;
+      margin-right: 20px;
+      position: relative;
+      max-height: 40px;
+      margin-top: -5px;
+    }
+
+    .template-article .post-section.post-extra h2.section-title {
+      margin-bottom: 0;
+    }
+
+    .template-article ul.social-sharing {
+      position: absolute;
+      list-style: none;
+    }
+
+    .template-article h1.article__title {
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .template-article p {
+      margin: 20px 0;
+    }
+
+    .template-article h3.subsection-title {
+      color: #b9acd7;
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .template-article .post-section {
+      padding-top: 50px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .template-article .subsection {
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .template-article .subsection ul {
+      margin-top: 20px;
+    }
+
+    .template-article .title-row {
+      padding-top: 30px;
+      display: inline-block;
+    }
+
+    .template-article .title-row .blog-title {
+      float: left;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .template-article .title-row .blog-title h2 {
+      font-size: 43px;
+      color: #333;
+      font-weight: 600;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .template-article .title-row .social-sharing-group {
+      display: inline-block;
+      float: right;
+      max-width: 215px;
+      background: #96669b;
+      color: #fff;
+      padding: 2px 5px 0 20px;
+    }
+
+    .template-article .title-row .social-sharing-group .social-sharing {
+      margin-top: 0;
+    }
+
+    .template-article .title-row .social-sharing-group .social-sharing .btn {
+      margin: 3px 15px 0 0;
+    }
+
+    .template-article .title-row .social-sharing-group .social-sharing i.fa {
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .template-article .post-section h2.section-title {
+      font-size: 30px;
+      font-weight: 600;
+      text-align: left;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .template-article .post-description {
+      padding-top: 0;
+    }
+
+    .template-article .back-button-row {
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .template-article .back-button-row .back-to-news-btn {
+      border: solid 2px #96669b;
+      border-radius: .5em;
+      padding: 13px 35px;
+      font-weight: 600;
+    }
+
+    .template-article .back-button-row .back-to-news-btn:hover {
+      background: #96669b;
+      color: #fff;
+    }
+
+    .template-article .post-content {
+      background: url(https://cdn.shopify.com/s/files/1/0025/0799/7284/files/Untitled-2.png);
+  /*     background-size: cover; */
+      background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 1024px) {
+      .template-article .title-row .blog-title h2 {
+        font-size: 38px;
+      }
+
+      .template-article .post-section h2.section-title {
+        font-size: 26px;
+      }
+
+      .template-article h3.subsection-title {
+        font-size: 20px;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      .template-article .title-row .blog-title h2 {
+        font-size: 26px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .template-article .title-row .blog-title {
+        width: 100%;
+      }
+
+      .template-article .title-row .social-sharing-group {
+        float: left;
+      }
+
+      .template-article .social-sharing li:first-child {
+        flex: unset;
+      }
+    }
+</style>

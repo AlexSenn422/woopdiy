@@ -1,0 +1,114 @@
+<section class="page-section custom-content-section top-section reveal">
+  <div class="centered asided">
+    <aside>
+      <h2 class="section-title"><i>{{ section.settings.cursive }}</i>{{ section.settings.title | replace: "|", "<br>" }}</h2>
+      {{ section.settings.text }}
+    </aside>
+    <aside>
+      <div class="image-circle" style="background-image: url('{{ section.settings.image | img_url: '800x800' }}')"></div>
+    </aside>
+  </div>
+  <div class="section-separator"></div>
+</section>
+
+<section class="page-section video-section light-bg">
+  <div class="centered">
+    {% if section.settings.floating-text.size > 0 %}
+    <div class="floating-text">
+    	{{ section.settings.floating-text }}
+    </div>
+    {% endif %}
+    {% if section.settings.video.size > 0 %}
+    	<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ section.settings.video | split: 'watch?v=' | last | split: 'youtu.be/' | last }}?autoplay=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  	{% endif %}
+  </div>
+</section>
+
+<section class="page-section how-it-works-section light-bg light-bg-separator">
+  <div class="centered">
+    <h2 class="section-title"><i>How it</i>works</h2>
+    <h4 class="section-subtitle">{{ section.settings.title_two }}</h4>
+    <div class="centered-text how-it-works">
+      {% if section.settings.text_info != blank %}
+    	{{ section.settings.text_info			 }}
+    	{% endif %}
+      {% if section.settings.image_two != blank %}
+      <img data-src={{ section.settings.image_two | img_url: 'master' }} class-"lazyload">
+      {% endif %}
+      {%if section.settings.button != blank %}
+      <a class="btn btn-download" href="{{ section.settings.btn_link }}"><i class="fa fa-download" aria-hidden="true"></i> {{ section.settings.button }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Giving Back Content",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": {
+        "de": "Foto",
+        "en": "Image",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "pt-BR": "Imagem"
+      }
+    },
+    {
+      "type": "text",
+      "id": "cursive",
+      "label": "Cursive"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+		"type": "richtext",
+		"id": "text",
+		"label": "Text"
+    },
+	{
+		"type": "richtext",
+		"id": "floating-text",
+		"label": "Text block"
+	},
+	{
+		"type": "text",
+		"id": "video",
+		"label": "Youtube link"
+	},
+    {
+      "type": "text",
+      "id": "title_two",
+      "label": "How it works title"
+    },
+    {
+		"type": "richtext",
+		"id": "text_info",
+		"label": "Text"
+    },
+    {
+		"type": "image_picker",
+		"id": "image_two",
+		"label": "How it works image"
+    },
+    {
+		"type": "text",
+		"id": "button",
+		"label": "Optional Button"
+    },
+    {
+		"type": "url",
+		"id": "btn_link",
+		"label": "Button link"
+    }
+  ]
+}
+{% endschema %}

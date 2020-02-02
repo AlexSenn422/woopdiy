@@ -1,0 +1,417 @@
+
+	<div class="post-section">
+		<section>
+          <h1 class="title">Essential Oil Perfume Ingredient Calculator</h1>
+          <img src="https://cdn.shopify.com/s/files/1/0025/0799/7284/files/perfume-note-blend-calculator.png?5649">
+				<div class="type">
+				<h2 class="title">
+					Select the type you are making (Parfume is strongest and After Shave is lightest scent):
+				</h2>
+				<div class="content">					
+					<label class="list-item">
+						<input type="radio" checked="checked" name="radio" value="eauDeParfum">
+						<span class="checkmark"></span>
+						Eau de Parfume
+					</label>
+					<label class="list-item">
+						<input type="radio" name="radio" value="eauDeToilette">
+						<span class="checkmark"></span>
+						Eau de Toilette
+					</label>
+					<label class="list-item">
+						<input type="radio" name="radio" value="eauDeCologne">
+						<span class="checkmark"></span>
+						Eau de Cologne
+					</label>
+					<label class="list-item">
+						<input type="radio" name="radio" value="bodySplash">
+						<span class="checkmark"></span>
+						Body Splash
+					</label>
+					<label class="list-item">
+						<input type="radio" name="radio" value="afterShave">
+						<span class="checkmark"></span>
+						After Shave
+					</label>
+				</div>
+				
+			</div>
+			
+			<div class="container-size">
+				<h2 class="title">
+					Select the size container you are filling (in mL).
+				</h2>
+				<div class="size-dropdown">
+					<select class="dropdown">
+						<option class="dropdown-item" value="15">15</option>
+						<option class="dropdown-item" value="10" selected>10</option>
+						<option class="dropdown-item" value="5">5</option>
+						<option class="editable" value="other">Other</option>
+					</select>
+					<input id="uintTextBox" class="editOption" style="display:none;" placeholder="Enter a number"></input>
+				</div>
+			</div>
+	
+			<div class="scent">
+				<h2 class="title">
+					Select the strength of the scent:
+				</h2>
+				<p>1-Lighter&nbsp;&nbsp;3-Heavier</p>
+				<div class="step-bar">
+					<input class="__range" id="rng" name="rng" value="1" type="range" max="2" min="0" step="1" onchange="scentChange()"> 
+					<div class="step-bar-labels">
+							<label>1</label>
+							<label>2</label>
+							<label>3</label>		
+					</div>
+				</div>
+			</div>
+	
+			<div class="results">
+				<h2 class="title">RESULTS:</h2><br>
+				<p id="total"></p>
+				<div class="content">
+					<p id="top"></p>
+					<p id="middle-base"></p>
+					<p id="base-fixative"></p>
+				</div><br>
+				<p id="alcohol"></p>
+				<p id="distilled-water"></p>
+			</div>
+		
+		</section>
+	</div>
+
+<script>
+  
+	var eauDeParfum = [
+	{"top":4, "middleBody":18, "baseFixative":4, "total":26, "alcohol":7.5, "distilledWater":"Top"},
+	{"top":5, "middleBody":23, "baseFixative":4, "total":32, "alcohol":8, "distilledWater":"Top"},
+	{"top":6, "middleBody":29, "baseFixative":6, "total":41, "alcohol":8.5, "distilledWater":"Top"}
+    ];
+    var eauDeToilette = [
+        {"top":3, "middleBody":11, "baseFixative":3, "total":17, "alcohol":7, "distilledWater":"Top"},
+        {"top":4, "middleBody":14, "baseFixative":4, "total":22, "alcohol":7.5, "distilledWater":"Top"},
+        {"top":5, "middleBody":18, "baseFixative":5, "total":28, "alcohol":8, "distilledWater":"Top"}
+    ];
+    var eauDeCologne = [
+        {"top":4, "middleBody":5, "baseFixative":4, "total":13, "alcohol":6.5, "distilledWater":"Top"},
+        {"top":5, "middleBody":8, "baseFixative":5, "total":18, "alcohol":7, "distilledWater":"Top"},
+        {"top":6, "middleBody":11, "baseFixative":6, "total":23, "alcohol":7.5, "distilledWater":"Top"}
+    ];
+    var bodySplash = [
+        {"top":1, "middleBody":3, "baseFixative":1, "total":5, "alcohol":6, "distilledWater":"Top"},
+        {"top":2, "middleBody":4, "baseFixative":2, "total":8, "alcohol":6.5, "distilledWater":"Top"},
+        {"top":3, "middleBody":5, "baseFixative":3, "total":11, "alcohol":7, "distilledWater":"Top"}
+    ];
+    var afterShave = [
+        {"top":1, "middleBody":2, "baseFixative":1, "total":4, "alcohol":5.5, "distilledWater":"Top"},
+        {"top":2, "middleBody":3, "baseFixative":1, "total":6, "alcohol":6, "distilledWater":"Top"},
+        {"top":2, "middleBody":4, "baseFixative":2, "total":8, "alcohol":6.5, "distilledWater":"Top"}
+    ];
+
+    var type = eauDeParfum;//initial type
+    var scent = 1;
+    var size = 1;
+
+  	window.onload = function() {
+    init();
+	};
+  
+    function init(){
+        var total = parseInt((type[scent].top*size).toFixed(0)) + parseInt((type[scent].middleBody*size).toFixed(0)) + parseInt((type[scent].baseFixative*size).toFixed(0));
+        document.getElementById("total").innerHTML = total + " total drops of essential oil";
+        document.getElementById("top").innerHTML = "Top Note: " + (type[scent].top*size).toFixed(0) + " drops";
+        document.getElementById("middle-base").innerHTML = "Middle-Base Note: " + (type[scent].middleBody*size).toFixed(0) + " drops";
+        document.getElementById("base-fixative").innerHTML = "Base-Fixative Note: " + (type[scent].baseFixative*size).toFixed(0) + " drops";
+        document.getElementById("alcohol").innerHTML = "Alcohol (mL): " + (type[scent].alcohol*size).toFixed(1);
+        document.getElementById("distilled-water").innerHTML = "Top off with distilled water.";
+
+        document.querySelectorAll(".__range").forEach(function(el) {       
+            el.oninput =function(){            
+            var valPercent = (el.valueAsNumber  - parseInt(el.min)) / 
+                                (parseInt(el.max) - parseInt(el.min));
+              var style = 'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop('+ valPercent+', #0000FF), color-stop('+ valPercent+', #f5f6f8));';
+              el.style = style;
+            };
+            el.oninput();
+          });
+    }
+
+    $(function() {
+    $('input[type=radio]').change(function(e) {//radio button change event
+		if(this.value == "eauDeParfum") {type = eauDeParfum;}
+		if(this.value == "eauDeToilette") {type = eauDeToilette;}
+		if(this.value == "eauDeCologne") {type = eauDeCologne;}
+		if(this.value == "bodySplash") {type = bodySplash;}
+		if(this.value == "afterShave") {type = afterShave;}
+		init();
+	  });	
+
+	$(".editOption").on('input', function () {//input field change event
+		setInputFilter(document.getElementById("uintTextBox"), function(value) {
+			return /^\d*$/.test(value); 
+		});
+		if((/^\d*$/.test(this.value)) && (this.value != "")) 
+		{
+			size = this.value/10;
+		}
+		else if(/^\d*$/.test(this.value))
+		{
+			size = 0;
+		}
+		init();
+	});
+
+	$('.dropdown').change(function(){//dropdown change event
+		var selected = $('option:selected', this).attr('class');
+	
+		if(selected == "editable"){
+			size = 0;
+			$('.editOption').val("");
+			$('.editOption').show();		
+			$('.editOption').keyup(function(){
+				var editText = $('.editOption').val();
+				$('.editable').val(editText);
+				$('.editable').html(editText);
+			});
+		} 
+		else
+		{
+			size = this.value/10;
+
+			$('.editable').text("Other");
+			$('.editable').val("");
+			$('.editOption').hide();
+		}
+		init();
+                });
+        });
+
+        function scentChange(){	
+            scent = document.getElementById("rng").value;
+            init();
+        }
+
+        function setInputFilter(textbox, inputFilter) {
+            ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+              textbox.addEventListener(event, function() {
+                if (inputFilter(this.value)) {
+                  this.oldValue = this.value;
+                  this.oldSelectionStart = this.selectionStart;
+                  this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+
+                  this.value = this.oldValue;
+                  this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                }
+                else {this.value = "";}
+              });
+            });
+          }
+
+</script>
+<style type="text/css">
+	
+  
+.post-section{
+	max-width: 700px;
+	margin: 0 auto;
+  	padding-left: 10px;
+}
+
+
+.container-size .dropdown, .editOption{
+	outline: 0;
+  	border-width: 0 0 2px;
+	width: 100%;
+}
+
+.size-dropdown{
+	height: 30px;
+}
+
+.post-section h1{
+	color: #333333;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 33px;
+	line-height: 65px;
+}
+
+.post-section h2{
+	color: #b9acd7;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 38px;
+	margin-bottom: 10px;
+	margin-top: 40px;
+}
+
+.post-section p,
+.post-section label, 
+.size-dropdown select, 
+.editOption{
+	color: #6d6e71;
+	font-family: 'Raleway', sans-serif;
+	font-size: 19px;
+	line-height: 29px;
+  	padding-left: 10px;
+}
+
+.type input{
+	margin: 10px
+}
+
+.scent h2{
+	margin-bottom: 0;
+}
+
+.scent p{
+	line-height: 10px;
+	margin-top: 3px;
+	font-size: 16px;
+}
+
+.results h2{
+	margin-bottom: 0;
+}
+
+.results #total{
+	margin-top: 0;
+	font-weight: bold;
+}
+
+.results .content{
+	margin-left: 20px;
+}
+
+
+/* radio color change */
+.list-item {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	margin-bottom: 5px;
+	cursor: pointer;
+	font-size: 19px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .list-item input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	width: 22px;
+	height: 22px;
+	margin: 0;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+	height: 22px;
+	width: 22px;
+	background-color: #eee;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .list-item:hover input ~ .checkmark {
+	background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .list-item input:checked ~ .checkmark {
+	background-color: #96669B;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .list-item input:checked ~ .checkmark:after {
+	display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .list-item .checkmark:after {
+	  width: 8px;
+	  height: 8px;
+	  border-radius: 50%;
+	  background: white;
+  }
+
+  /* Range color change */
+  .__range{
+	margin:30px 0 0 0;
+	-webkit-appearance: none;
+	background-color: #96669B;
+	height: 1px;
+	width: 100%;
+	margin: 10px auto;
+  }
+  .__range:focus{
+	outline:none;
+  }
+  .__range::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	width: 15px;
+	height: 15px;
+	background: #96669B;
+	border-radius: 50%;
+	cursor: -moz-grab;
+	cursor: -webkit-grab; 
+  }
+  #rng{
+	  margin-bottom: 0;
+  }
+
+  .step-bar {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+      margin-top: 20px;
+  }
+
+  .step-bar-labels {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10px;
+    margin-top: 15px;
+  }
+
+  /* dropdown */
+	.dropdown{
+		height: 30px;
+	}
+	.post-section option {
+		height: 30px;
+		line-height: 30px;
+	}
+
+	.editOption{
+		width: 90%;
+		height: 26px;
+		position: relative;
+		top: -29px;
+		/* background: #E0F5FF;; */
+		border: 0;
+	}
+</style>

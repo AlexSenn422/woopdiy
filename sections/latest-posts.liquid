@@ -1,0 +1,91 @@
+<section id="lifestyle" class="page-section latest-posts-section">
+  <div class="latest-posts-section-inner">
+    <div class="floating-image floating-image-mag">
+    	<img data-src="{{ 'coconut.jpg' | asset_url }}" class="lazyload">
+    </div>
+    
+    <div class="floating-image floating-image-mag-2">
+    	<img data-src="{{ 'paint.png' | asset_url }}" class="lazyload">
+    </div>
+    
+    <div class="centered reveal">
+      <h2 class="section-title right">{{ section.settings.title | escape }}</h2>
+      <div class="lifestyle-btn"><a class="btn btn-light" href="blogs/{{section.settings.blog}}">View all</a></div> 
+      <div class="posts-grid">
+        {% for article in blogs.news.articles limit: 5 %}
+        <div class="post">
+          <div class="post-image">
+            {% if article.image %}
+            {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
+            {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
+            {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+            {% include 'image-style' with image: article.image, small_style: false, width: 905, height: 600, wrapper_id: img_wrapper_id, img_id: img_id %}
+
+            <div id="{{ img_wrapper_id }}" class="article__list-image-wrapper js">
+               <img id="{{ img_id }}"
+                     class="article__list-image lazyload"
+                     src="{{ article.image | img_url: '600x600' }}"
+                     data-src="{{ img_url }}"
+                     data-widths="[180, 360, 540, 720, 905, 1090, 1296, 1512, 1728, 2048]"
+                     data-aspectratio="{{ article.image.aspect_ratio }}"
+                     data-sizes="auto"
+                     alt="">
+            </div>
+
+            <noscript>
+               {{ article | img_url: '600x600', scale: 1 | img_tag: article.title }}
+            </noscript>
+            {% endif %}
+          </div>
+          
+          <h3>{{ article.title }}</h3>
+          <div class="post-excerpt">
+              {% if article.excerpt.size > 0 %}
+                {{ article.excerpt }}
+              {% else %}
+                {{ article.content | strip_html | truncate: 150 }}
+              {% endif %}
+          </div>
+          <a href="{{ article.url }}" class="read-more">Read More</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ 
+
+
+ 
+{% schema %}
+  {
+    "name": "Latest posts",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title",
+			"default": "mag."
+		},
+		{
+			"type": "blog",
+			"id": "blog",
+			"label": "Blog" 
+		}
+	],
+    "presets": [
+      {
+        "name": "Latest posts"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

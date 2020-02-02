@@ -1,0 +1,351 @@
+* {
+  -webkit-appearance: none;
+}
+
+table.shappify_qb_grid {
+  max-width: 200px !important;
+  width: 80% !important;
+  color: #999a9c !important;
+}
+table.shappify_qb_grid thead, table.shappify_qb_grid thead tr, table.shappify_qb_grid thead th, table.shappify_qb_grid thead td {
+  background: #b7acd457 !important;
+
+  color: #999a9c !important;
+  font-weight: bold;
+}
+
+table.shappify_qb_grid thead {
+  background: #b7acd457 !important;
+
+  color: #999a9c !important;
+}
+
+table.shappify_qb_grid tbody tr:nth-child(even) {
+  background-color: #cac5e054!important;
+  color: #999a9c !important;
+}
+table.shappify_qb_grid tbody tr:nth-child(odd) { 
+  color: #999a9c !important;
+}
+
+table.shappify_qb_grid, table.shappify_qb_grid th, table.shappify_qb_grid td {
+  text-align: left;
+  padding: 5px;
+  border: 1px solid #cac5e0 !important;
+  border-collapse: collapse;
+}
+
+/* -------------------------------------------------- Added -------------------------------------------------- */
+
+.padding-top-0 {
+  padding-top: 0 !important;
+}
+
+.has_dropdown:hover .subnav {
+  background: transparent;
+  padding: 0;
+  margin-left: -35px;
+}
+
+header#site-header nav li {  
+  float: left;
+  margin-right: 30px;
+}
+
+header#site-header .subnav li {
+  float: none;
+  margin: 0;
+  padding: 0 10px;
+  background: #c0acce;
+}
+
+ul.subnav:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #c0acce;
+}
+
+header#site-header .subnav li:first-child {
+  border-top-left-radius: .3em;
+  border-top-right-radius: .3em;
+}
+
+header#site-header .subnav li:last-of-type {
+  border-bottom-left-radius: .3em;
+  border-bottom-right-radius: .3em;
+}
+
+header#site-header .subnav li:hover {
+  background: #96669B;
+}
+
+header#site-header .subnav li a {
+  color: white !important;
+}
+
+header#site-header nav a {
+  color: #96669B;
+}
+
+header#site-header nav a:hover {
+  color: #333;
+}
+
+header#site-header.header-fixed {
+  top: 0 !important;
+}
+
+.subnav {
+  padding-left: 10px;
+}
+
+#announce-bar {
+  background: #96669B;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+#announce-bar .flex-container {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#announce-bar .image-icon {
+  display: inline-block;
+  height: 30px;
+  padding-right: 10px;
+  margin-top: -3px;
+}
+
+#announce-bar .image-icon img {
+  height: 100%;
+}
+
+#announce-bar .description {
+  display: inline-block;
+  color: white;
+}
+
+#announce-bar .btn-group {
+  display: inline-block;
+}
+
+#announce-bar .btn-group a {
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #fff;
+  padding: 5px 0;
+  width: 100px;
+  display: inline-block;
+  margin-left: 10px;
+  border-radius: .3em;
+  box-shadow: 1px 3px 2px #19191963;
+}
+
+.template-index header#site-header {
+  background: #f0edf7;
+}
+
+.banner-image {
+  display: flex;
+}
+
+.page-section.banner {
+  padding-top: 0;
+}
+
+.page-section.banner .banner-featured-image {
+  margin-bottom: 60px;
+}
+
+.page-section.banner aside {
+  padding: 0;
+}
+
+.page-section.banner .aside-image {
+  max-width: 28%;
+}
+
+.page-section.banner .banner-email-subscribe {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.page-section.banner .banner-email-subscribe .text-row {
+  display: inline-block;
+}
+
+.page-section.banner .banner-email-subscribe h2 {
+  line-height: 1.3;
+}
+
+.page-section.banner .banner-email-subscribe h2 i {  
+  font-family: 'Cursive', cursive;
+  position: relative;
+  transform: rotate(0);
+  color: #7c4182;
+  font-size: 35px;
+  font-style: normal;
+}
+
+.page-section.banner .banner-email-subscribe h2 i u {
+  text-underline-position: under;
+}
+
+/* .page-section.banner .banner-email-subscribe h2 i u:after {
+  content: "";
+  border-bottom: solid 1px #7c4182;
+} */
+
+.page-section.banner .banner-email-subscribe .btn-group {
+  display: inline-flex;
+  padding-left: 50px;
+}
+
+.page-section.banner .banner-email-subscribe .btn-group .email-input {
+  border: solid 2px #96669b;
+  padding: 0 10px 0 25px;
+  height: 56px;
+  margin-right: 15px;
+  border-radius: 0.5em;
+  background: none;
+}
+
+.page-section.banner .banner-email-subscribe .btn-group .email-submit {
+  height: 56px;
+}
+
+.page-section.banner .aside-text .section-title {
+  font-size: 60px;
+  color: #96669B;
+  margin: 55px 0 0 40px;
+}
+
+.page-section.banner .aside-text .section-title i {
+  position: relative;
+  font-size: 67px;
+  letter-spacing: -1px;
+  transform: rotate(0);
+}
+
+.template-article .post-extra ol li {
+  padding-bottom: 20px;
+}
+
+.template-article .post-extra ol li:last-of-type {
+  padding-bottom: 0;
+}
+  
+@media screen and (max-width: 1440px) {
+  .page-section.banner .aside-text .section-title {
+    font-size: 50px;
+  }  
+
+  .page-section.banner .aside-text .section-title i {
+    position: relative;
+    font-size: 47px;
+    letter-spacing: -1px;
+    transform: rotate(0);
+  }
+}
+  
+@media screen and (max-width: 1024px) {
+  .page-section.banner .banner-email-subscribe .btn-group {
+    padding: 50px 0 0;
+  }
+  
+  .page-section.banner .aside-text .section-title {
+    font-size: 45px;
+  }  
+
+  .page-section.banner .aside-text .section-title i {
+    position: relative;
+    font-size: 42px;
+    letter-spacing: -1px;
+    transform: rotate(0);
+  }
+}
+  
+@media screen and (max-width: 992px) {
+  .page-section.banner .banner-email-subscribe .btn-group {
+    padding: 50px 0 0;
+  }
+  
+  .page-section.banner .aside-text .section-title {
+    font-size: 32px;
+  }  
+
+  .page-section.banner .aside-text .section-title i {
+    position: relative;
+    font-size: 30px;
+    letter-spacing: -1px;
+    transform: rotate(0);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page-section.banner aside {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .page-section.banner .aside-text .section-title {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .page-section.banner .aside-text .section-title i {    
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .page-section.banner .aside-image {
+    max-width: 70%;
+  }
+  
+  .page-section.banner .banner-email-subscribe .btn-group .email-input {
+    margin-right: 0;
+    padding-left: 10px;
+  }
+  
+  .page-section.banner .banner-email-subscribe .btn-group .email-submit {
+    margin-left: 0;
+  }
+  
+  .page-section.banner .aside-text .section-title span {
+    display: block;
+  }
+  
+  .mobile-search {
+    display: none;
+  }
+  
+  header#site-header .subnav li {
+    background: none;
+  }
+  
+  header#site-header nav a {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 420px) {  
+  .page-section.banner .banner-email-subscribe .btn-group .email-submit {
+    margin-top: 20px;
+  }
+}

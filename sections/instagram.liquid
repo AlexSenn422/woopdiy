@@ -1,0 +1,73 @@
+<section class="page-section instagram-section reveal">
+  <div class="floating-image floating-image-inst-1">
+  	<img data-src="{{ 'seeds.png' | asset_url }}" class="lazyload">
+  </div>
+  <div class="centered asided">
+    <aside>
+      <h2 class="section-title">
+        <i>Follow Us on</i>
+        insta<br>gram
+      </h2>
+      <p>
+        <a class="btn btn-light" href="{{ settings.social_instagram_link | escape }}" aria-describedby="a11y-external-message"> Follow Us </a>
+      </p>
+    </aside>
+    <aside>
+      <div class="insta-images">
+        <div id="instafeed"></div> 
+      </div>
+    </aside>
+  </div>
+</section>
+ 
+ 
+<script src="{{ 'instafeed.min.js' | asset_url }}" ></script>
+<script type="text/javascript">
+
+  var feed = new Instafeed({ 
+    get: 'user',
+    userId: '11464164403',
+    limit: 3,
+    accessToken: '{{section.settings.instagram}}',
+    resolution: 'standard_resolution',
+    template:{% raw %}'<a href="{{link}}"><div class="insta-circle"  style="background-image: url({{image}})"  /></div></a>',{% endraw %}
+  });
+  feed.run();
+
+  
+//   var feed = new Instafeed({
+//   get: 'user',
+//   userId: [user_id],
+//   accessToken: '[accessToken]',
+//   resolution: 'low_resolution',
+//   filter: function(image) {
+//     return image.tags.indexOf('somehashtag') >= 0;
+//   }
+// });
+// feed.run();
+  // template:'<a href="{{link}}"><div class="insta-circle"  style="background-image: url({{image}})"  /></div></a>',
+</script>
+
+{% schema %}
+{
+"name": "Instagram",
+"settings": [ 
+      {
+        "type": "text",
+        "id": "instagram",
+        "label": "instagram ID"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

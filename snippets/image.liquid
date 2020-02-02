@@ -1,0 +1,18 @@
+{%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+<div style="padding-top:{% if image_height != blank %}{{ image_height }}{% else %}{% if image.aspect_ratio > 0 %}{{ 1 | divided_by: image.aspect_ratio | times: 100}}{% else %}100{% endif %}{% endif %}%;"
+     class="image-ratio-container{% if class != blank %} {{ class }}{% endif %}" data-variant="{{variant}}">
+  {% if fancy_flag %}
+  <a class="product-main-image" href="{{ image | img_url: 'master' }}">
+  {% endif %}
+    <img class="lazyload lazypreload{% if height != blank %} size-contain{% endif %}"
+         src="{{ image | img_url: '300x300' }}"
+         data-src="{{ img_url }}"
+         data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+         data-aspectratio="{{ image.aspect_ratio }}"
+         data-sizes="auto"
+         tabindex="-1"
+         alt="{{ image.alt | escape }}">
+  {% if fancy_flag %}
+  </a>
+  {% endif %}
+</div>

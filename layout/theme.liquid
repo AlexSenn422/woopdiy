@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ shop.locale }}">
+  <head>
+    <meta name="p:domain_verify" content="b84381005b8694b013a9c9a933bc22ac"/>
+   <meta name="google-site-verification" content="R8vhDwadrjcHjocJvi2K3SgdPQUYzoRFKumgQDozlSw"
+    <meta charset="UTF-8">
+	<meta name="keywords" content="aromatherapy supplies, essential oil accessories, essential oil supplies, essential oil tools, essential oil suppliers, essential oil roller bottles, essential oil samples, sample bottles, sample vials, essential oil carrying case, essential oil case, essential oil travel case, doterra supplies, young living supplies"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {%- capture seo_title -%}
+    {%- if template == 'search' and search.performed == true -%}
+    {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    {%- else -%}
+    {{ page_title }}
+    {%- endif -%}
+    {%- if current_tags -%}
+    {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+    &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+    &ndash; {{ shop.name }}
+    {%- endunless -%}
+    {%- endcapture -%}
+    <title>{{ seo_title | strip }}</title>
+
+    {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% include 'social-meta-tags' %}
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700,900" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'swatch.css' | asset_url | stylesheet_tag }}
+    {{'csp-custom.css' | asset_url | stylesheet_tag}}
+    <script>
+      var theme = {
+        strings: {
+          addToCart: {{ 'products.product.add_to_cart' | t | json }},
+          soldOut: {{ 'products.product.sold_out' | t | json }},
+          unavailable: {{ 'products.product.unavailable' | t | json }},
+          regularPrice: {{ 'products.product.regular_price' | t | json }},
+          sale: {{ 'products.product.on_sale' | t | json }},
+          showMore: {{ 'general.filters.show_more' | t | json }},
+          showLess: {{ 'general.filters.show_less' | t | json }},
+          addressError: {{ 'sections.map.address_error' | t | json }},
+          addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
+          addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+          authError: {{ 'sections.map.auth_error_html' | t | json }},
+          newWindow: {{ 'general.accessibility.link_messages.new_window' | t | json }},
+          external: {{ 'general.accessibility.link_messages.external' | t | json }},
+          newWindowExternal: {{ 'general.accessibility.link_messages.new_window_and_external' | t | json }}
+        },
+        moneyFormat: {{ shop.money_format | json }}
+      }
+
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        
+    </script>
+    
+    <!----------------------------------- Yotpo ---------------------------------->
+    <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/qk2mnYbi7SFCco5bp1o3Fz7k3Ytli3ZICmOt3DhI/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{{ 'jquery.cycle2.min.js' | asset_url }}"></script>
+    <script src="{{ 'jquery.cycle2.carousel.min.js' | asset_url }}"></script>
+    <script src="{{ 'jquery.cycle2.swipe.min.js' | asset_url }}"></script>
+
+    {%- if template.directory == 'customers' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+    <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> 
+    {{ content_for_header }}
+{%- include 'bold-pr' -%}
+    <script src="https://unpkg.com/scrollreveal"></script>
+  
+  {% include 'shogun-head' %}
+</head>
+  <body class="template-{{ template | split: '.' | first }}">
+    <div class="wrapper">
+      {% include 'cart' %}
+      <div id="announce-bar">
+        <div class="flex-container">
+          <div class="image-icon"> <img src="https://cdn.shopify.com/s/files/1/0025/0799/7284/files/shipped.png"> </div>
+          <div class="description"><span>FREE SHIPPING for orders over $40</span></div>
+          <div class="btn-group"> 
+  <!----Turned off-----          <a class="btn-yes" href="#"></a>  ------->
+  <!----Turned off-----          <a class="btn-no" href="#">No</a>  ------->
+          </div>
+        </div>
+      </div>
+      <header id="site-header">
+        <div class="centered">
+          <div class="header-box">
+            <a href="#!" class="mobile-menu-activator" title="Menu"><span>Menu</span></a>
+            <nav>
+              <div class="mobile-menu-nav">
+                <a href="#!" class="mobile-menu-close" title="Close">Close</a>
+                <a class="cart-link" href="/cart">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span>Cart</span>
+                </a>
+              </div>
+              <ul>
+                {% for link in linklists.main-menu.links %}
+                {% if link.title == '|' %}
+                <li class="separator"></li>
+                {% else %}
+                <li class="nav-link{%  if link.links != blank %} has_dropdown{% endif %}" ><a {%  if link.url contains '#' %} class="hash"{% endif %}href="{{ link.url | escape }}">{{ link.title | escape }}</a>
+                  {% if link.links != blank %}
+                  <ul class="subnav">
+                    {% for childlink in link.links %}
+                    <li><a href="{{ childlink.url | escape }}">{{ childlink.title | escape }}</li>
+                      {% endfor %} 
+                  </ul>
+                  {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+              <form class="mobile-search" action="/search">
+                <i class="fa fa-search"></i> <input type="text" name="q" placeholder="Search">
+              </form>
+            </nav>
+          </div>
+          <div class="header-box logo-box">
+            <div class="logo-container">
+              <a href="/" class="logo">
+                <img src="{{ "logo.svg" | asset_url }}">
+              </a>
+            </div>
+          </div>
+          <div class="header-box">
+            <div class="header-controls">
+              <form class="search" action="/search">
+                <i class="fa fa-search"></i> <input name="q" type="text" placeholder="Search">
+              </form> 
+
+              {% if customer  %}
+              <a href="/account">Your Account</a>
+              {% else %}
+              {{ 'Log in' | customer_login_link }} 
+              {% endif %}
+
+              <span class="separator"></span>
+              <a class="cart-link" href="/cart">
+                <i class="fa fa-shopping-cart"></i> 
+                <div id="cart"  class="cart-value">
+                  {% if cart.item_count > 0 %}
+                <span class="cart-count">{{ cart.item_count }}</span> 
+                  {% endif %}
+                </div>
+                <span>Cart</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      {{content_for_layout}}
+      <footer id="site-footer">
+        <div class="floating-image floating-image-lv">
+          <img src="{{ 'green.png' | asset_url }}">
+        </div>
+        <div class="floating-image floating-image-lv-2">
+          <img src="{{ 'cheese.png' | asset_url }}">
+        </div>
+        <div class="floating-image floating-image-lv-3">
+          <img src="{{ 'mint.png' | asset_url }}">
+        </div>
+        <div class="centered asided love-section">
+          <aside>
+            <h2 class="section-title">
+              <i>Why people</i>
+              love<br>us?
+            </h2>
+          </aside>
+          <aside class="points-grid">
+            <div class="point">
+              <div class="point-image"></div>
+              <div class="point-info">
+                <h3>Recipes</h3>
+                <p>We are oil recipe aficionados</p>
+              </div>
+            </div>
+            <div class="point">
+              <div class="point-image"></div>
+              <div class="point-info">
+                <h3>Share</h3>
+                <p>We share. We believe in a better world.</p>
+              </div>
+            </div>
+            <div class="point">
+              <div class="point-image"></div>
+              <div class="point-info">
+                <h3>Fun</h3>
+                <p>We have fun!</p>
+              </div>
+            </div>
+            <div class="point">
+              <div class="point-image"></div>
+              <div class="point-info">
+                <h3>Like you</h3>
+                <p>We are just like you</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="centered">
+          <div class="subscribe">
+            <h2 class="section-title"><i>Subscribe To our</i> newsletter</h2>
+            {%- assign formId = 'ContactFooter' -%}
+            {% form 'customer', id: formId, novalidate: 'novalidate' %}
+            <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+              {% include 'form-status', form_id: formId, success_message: 'general.newsletter_form.confirmation' %}
+
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input type="email"
+                     name="contact[email]"
+                     id="{{ formId }}-email"
+                     class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+                     value="{% if customer %}{{ customer.email }}{% endif %}"
+                     aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                     aria-required="true"
+                     required
+                     autocorrect="off"
+                     autocapitalize="off"
+                     {% if form.errors %} aria-invalid="true" aria-describedby="{{ formId }}-email-error"{% endif %}>
+              <input type="submit" class="newsletter__submit" name="commit" id="Subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+              <span id="{{ formId }}-email-error" class="input-error-message">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+            </div>
+            {% endform %}
+          </div>
+          <div class="footer-middle">
+            <a href="#!" class="footer-logo"><img src="{{ "logo.svg" | asset_url }}"></a>
+            <nav class="footer-nav">
+              <ul>
+                {% for link in linklists.footer.links %}
+                {% if link.title == '|' %}
+                <li class="separator"></li>
+                {% else %}
+                <li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <div class="footer-widget">
+              <h3>What is WoopDIY?</h3>
+             {{ settings.footer_text_first }}
+            </div>
+            <div class="footer-widget">
+              <h3>Keep in touch</h3>
+              <p>{{ settings.footer_text_second }}</p>
+              <div class="footer-icons">
+                <a href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="#!"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="footer-widget">
+              <h3>Contact Us</h3>
+              <p><strong>Email:</strong> <a class="mail-link" href="mailto:info@woopdiy.com">info@woopdiy.com</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+    <script>
+      $(function(){
+        ScrollReveal().reveal('.reveal-collection', { delay:200 });
+      ScrollReveal().reveal('.reveal', { delay: 100 });
+      })
+    </script>
+    
+    
+    {% if template == 'index' %}
+    <script>
+      var hash = document.querySelectorAll('.hash');
+      hash[0].addEventListener('click', function(e){ 
+        e.preventDefault();
+        var hash_item = this.getAttribute("href").replace('/#','') || '#';
+
+        var item = document.getElementById(hash_item)
+
+        var target = item
+        animate(document.scrollingElement || document.documentElement, "scrollTop", "", 0, target.offsetTop, 1000, true);
+
+      });
+    </script>
+    {% endif %}
+    
+    <script type="text/javascript" charset="utf-8">
+      var shappify_customer_tags = {{ customer.tags | json }}
+    </script>
+<script type='text/javascript'>var subscribersSiteId = 'f54e15d9-9ad6-4903-95b2-62691faca550';var subscribersServiceWorkerPath = '/apps/firebase-messaging-sw';</script><script type='text/javascript' src='https://cdn.subscribers.com/assets/subscribers.js'></script><script type="text/javascript">
+  var subscribersSiteId = 'ccb3d8b9-13ad-4e69-999d-25725b0bfef7';
+</script>
+<script type="text/javascript" src="https://cdn.subscribers.com/assets/subscribers.js"></script></body>
+</html>

@@ -1,0 +1,48 @@
+<section id="mini-cart">
+  <div class="cart-inner">
+    <a href="#!" class="close-cart" title="Close">&times;</a>
+    <h3><i class="fa fa-shopping-cart"></i> Cart</h3>
+    
+    <section class="cart-items">
+    {% for item in cart.items %}
+      <div class="cart-item item-{{ item.variant_id }}">
+        <a href="{{ item.url }}" class="cart-item-image">
+          {{ item.image | img_url: '100x100' | img_tag }}
+        </a>
+        <h3>{{ item.title }}</h3>
+        <div class="quantity-container">
+  		  <div class="quantity">
+            <input type="hidden" class="item-key" name="key" value="{{ item.variation_id }}">
+            <input type="hidden" class="quantity-input" value="{{ item.quantity }}" name="quantity">
+            <a href="#!" class="less">-</a>
+            <span class="num">{{ item.quantity }}</span>
+            <a href="#!" class="more">+</a>
+          </div>
+        </div>
+        <div class="final-price-container">{{ item.final_line_price | money }}</div>
+        <div class="remove-container">
+          <a class="remove-item" data-key="{{ item.variant_id }}" href="#!">
+            <i class="fa fa-trash" title="Remove" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+     {% else %}
+    	<div class="empty-cart-message">
+          Your cart is empty
+    	</div>
+    {% endfor %}
+    </section>
+
+    <div class="cart-total-section {% if cart.item_count == 0 %}hide{% endif %}">
+    
+      <div class="cart-total">
+        Total <span class="total">{{ cart.total_price | money }}</span>
+      </div>
+    
+      <div class="checkout-link-container">
+        <a class="btn" href="/checkout">Proceed to Checkout</a>
+      </div>
+    
+    </div>
+  </div>
+</section>
